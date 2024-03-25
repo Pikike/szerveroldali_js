@@ -12,15 +12,12 @@ const objRepo={}
 
 app.use(
   '/zoos/new',
-  saveZooMW(objRepo),
-  renderMW(objRepo, 'zooadd')
-);
+  saveZooMW(objRepo),);
 
 app.use(
   '/zoo/edit/:zooid',
   getZooMW(objRepo),
   saveZooMW(objRepo),
-  renderMW(objRepo, 'zooupdate')
 );
 
 app.get(
@@ -31,15 +28,14 @@ app.get(
 
 app.get(
   '/zoos',
-  getZoosMW(objRepo),
-  renderMW(objRepo, 'zoo')
-);
+  getZoosMW(objRepo),);
+  
 
 app.use(
   '/animals/:zooid/new',
   getZooMW(objRepo),
   saveAnimalMW(objRepo),
-  renderMW(objRepo, 'animaladd')
+  
 );
 
 app.use(
@@ -47,7 +43,7 @@ app.use(
   getZooMW(objRepo),
   getAnimalMW(objRepo),
   saveAnimalsMW(objRepo),
-  renderMW(objRepo, 'animalupdate')
+  
 );
 
 app.get(
@@ -55,7 +51,7 @@ app.get(
   getNagymamaMW(objRepo),
   getAnimalMW(objRepo),
   deleteAnimalsMW(objRepo),
-  renderMW(objRepo, 'animals')
+  
 );
 
 app.get(
@@ -63,5 +59,5 @@ app.get(
   authMW(objRepo),
   getZooMW(objRepo),
   getAnimalsMW(objRepo),
-  renderMW(objRepo, 'animals')
+  
 );
