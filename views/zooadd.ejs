@@ -1,10 +1,8 @@
-    <%- include('header') -%>
-    
-    
+<%- include('header') -%>
         <header>
             <div class="container">
                 <div class="row my-5 row-cols-md-6 align-self-end">
-                    <h1 class="col col-md-6">Állat hozzáadása</h1>
+                    <h1 class="col col-md-6">Állatkert hozzáadása</h1>
                 </div>
             </div>
         </header>
@@ -17,20 +15,20 @@
                     </div>
                 </div>
                 <div class="form-group row my-3">
-                    <label for="inputAge" class="col-sm-2 col-form-label">Kor:</label>
+                    <label for="inputAddress" class="col-sm-2 col-form-label">Cím:</label>
                     <div class="col-sm-10">
-                        <input type="number" class="form-control" id="inputAge">
+                        <input type="text" class="form-control" id="inputAddress">
                     </div>
                 </div>
                 <div class="form-group row my-3">
-                    <label for="inputType" class="col-sm-2 col-form-label">Fajta:</label>
+                    <label for="inputOperator" class="col-sm-2 col-form-label">Üzemeltető:</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="inputType">
+                        <input type="text" class="form-control" id="inputOperator">
                     </div>
                 </div>
                 <button type="submit" class="btn btn-primary">Mentés</button>
-                <button type="cancel" class="btn btn-secondary">
-                    <a class="nav-link" href="animals.html">Mégsem</a>
+                <button type="cancel" class="btn btn-secondary" >
+                    <a class="nav-link" href="/">Mégsem</a>
                 </button>
             </div>
         </form>

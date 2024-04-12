@@ -2,10 +2,11 @@
  * Az oldal betöltése/ újratöltése
  */
 
-const requireOption = require('./requireOption');
+//const requireOption = require('./requireOption');
 
-module.exports = function(objectrepository, viewName) {
-    return function(req, res) {
-        console.log('render: ' + viewName);
-    };
-};
+function render(objectrepository, viewName) {
+    return (req, res, next) => {
+       res.render(viewName, res.locals);
+    }
+}
+module.exports = render;
