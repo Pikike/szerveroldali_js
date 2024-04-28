@@ -8,7 +8,14 @@ const getZoosMW= require('../middleware/zoo/getZoos');
 const deleteZooMW= require('../middleware/zoo/deleteZooMW');
 const saveZooMW= require('../middleware/zoo/saveZooMW');
 function addRoutes(app) {
-const objRepo={};
+
+const ZooModel=require('../models/zoo');
+const AnimalModel=require('../models/zoo');
+
+const objRepo={
+  ZooModel: ZooModel,
+  AnimalModel: AnimalModel
+};
 
 app.use(
   '/zoos/new',

@@ -3,14 +3,24 @@
  *  majd lementi a res.locals.animals-ba és next-et hív
  */
 
-const requireOption = require('../requireOption');
+//const requireOption = require('../requireOption');
 
-module.exports = function(objectrepository) {
-   
+ function getAnimal(objectrepository) {
+    const AnimalModel=objectrepository.AnimalModel;
 
-    return function(req, res, next) {
-            res.locals.animal= {_id: 1, name:"Ella", age: 10 }
-            return next();
+    return (req, res, next)=> {
+        res.locals.animalId=req.params.id;
+
+        return AnimalModel.findOne({
+            _id: req.params.id
+        }).then ((animal)=>{
+            res.locals.animal=animal;
+            return next;
+        }).catch(err=> {
+            return next(err);
+        });
+
         
     };
 };
+module.exports =getAnimal;

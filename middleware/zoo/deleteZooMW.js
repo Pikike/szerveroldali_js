@@ -4,12 +4,15 @@
 
 const requireOption = require('../requireOption');
 
-module.exports = function(objectrepository) {
-   
+function deleteZoo(objectrepository) {
 
-    return function(req, res, next) {
-        
-            return next();
-        
+    return (req, res, next)=> {
+        return res.locals.zoo.deleteOne().then(()=>{
+            return res.redirect("/");
+        }).catch(err=> {
+            return next(err);
+        })
+           
     };
 };
+module.exports = deleteZoo;

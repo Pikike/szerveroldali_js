@@ -4,12 +4,17 @@
 
 const requireOption = require('../requireOption');
 
-module.exports = function(objectrepository) {
+function deleteAnimal(objectrepository) {
    
 
-    return function(req, res, next) {
-        
-            return next();
+    return(req, res, next) =>{
+        return res.locals.animal.deleteOne().then(()=>{
+            return res.redirect("/");
+        }).catch(err=>{
+            return next(err);
+        })
+           
         
     };
 };
+module.exports = deleteAnimal;
