@@ -10,7 +10,7 @@ const saveZooMW= require('../middleware/zoo/saveZooMW');
 function addRoutes(app) {
 
 const ZooModel=require('../models/zoo');
-const AnimalModel=require('../models/zoo');
+const AnimalModel=require('../models/animal');
 
 const objRepo={
   ZooModel: ZooModel,

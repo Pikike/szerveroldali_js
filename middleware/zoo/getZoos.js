@@ -3,12 +3,11 @@
  * 
  */
  
-//const requireOption = require('../requireOption');
+
 
 function getZoos(objectrepository){
    
     const ZooModel=objectrepository.ZooModel;
-
     return function(req, res, next){
  
          return ZooModel.find({}).then((zoos)=>{

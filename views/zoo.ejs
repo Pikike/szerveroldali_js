@@ -21,45 +21,34 @@
                     <th scope="col">
                   </tr>
                 </thead>
-                <tbody>
-                  <tr>
+               <% zoos.forEach(function(Zoo){%>
+                <tr>
                     <th scope="row">
-                        <button class="btn"  title="Animals" id="animals" href="/animal/1">
-                            <a class="nav-link" href="/animal/1">Állatok</a>
-                        </button>
+                        
+                            <a class="nav-link" href="/animal/<%= Zoo._id %>">Állatok</a>
+                        
                     </th>
-                    <td>HappyZoo</td>
-                    <td>Happy Road 10.</td>
-                    <td>Happy Zoo</td>
+                    <td>
+                        <%= Zoo.nev %>
+                    </td>
+                    <td>
+                        <%= Zoo.cim %>
+                    </td>
+                    <td>
+                        <%= Zoo.uzemelteto %>
+                    </td>
                     <td>
                         <button class="btn"  title="Change" id="change" >
-                            <a class="nav-link" href="/zoo/edit/1">Módosítás</a>
+                            <a class="nav-link" href="/zoo/edit/<%= Zoo._id %>">Módosítás</a>
                         </button>
                     </td>
                     <td>
-                        <button class="btn" type="button" title="Delete" id="delete">Törlés</button>
+                        <a class="nav-link" type="button" href="/zoo/delete/<%= Zoo._id %>" title="Delete" id="delete">Törlés</button>
                     </td>
                   </tr>
-                  <tr>
-                    <th scope="row">
-                        <button class="btn"  title="Animals" id="animals" href="/animal/2">
-                            <a class="nav-link" href="/animal/2">Állatok</a>
-                        </button>
-                    </th>
-                    <td>Panda Land</td>
-                    <td>Április utca 1.</td>
-                    <td>Fül ELek</td>
-                    <td>
-                        <button class="btn"  title="Change" id="change" >
-                            <a class="nav-link" href="/zoo/edit/2">Módosítás</a>
-                        </button>
-                    </td>
-                    <td>
-                        <button class="btn" type="button" title="Delete" id="delete">Törlés</button>
-                    </td>
-                  </tr>
-                  
-                </tbody>
+
+                <%}); %>
+
               </table>
         </div>
         <%- include('footer') -%>

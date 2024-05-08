@@ -2,7 +2,7 @@ const Schema = require('mongoose').Schema;
 const db = require('../config/db');
 
 const Animal = db.model('Animal', {
-    nev: String,
+    allatnev: String,
     kor: Number,
     fajta: String,
     _lakik: {

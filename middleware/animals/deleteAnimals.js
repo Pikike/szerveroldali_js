@@ -9,7 +9,7 @@ function deleteAnimal(objectrepository) {
 
     return(req, res, next) =>{
         return res.locals.animal.deleteOne().then(()=>{
-            return res.redirect("/");
+            return res.redirect(`/animal/${res.locals.zoo._id}`);
         }).catch(err=>{
             return next(err);
         })

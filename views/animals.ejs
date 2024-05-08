@@ -4,7 +4,7 @@
                 <div class="row my-5 row-cols-md-6 align-self-end">
                     <h1 class="col col-md-6">Állatok</h1>
                     <button class="btn col col-md-2 align-self-end" >
-                        <a class="nav-link" href="/animals/1/new">Állatok hozzáadása</a>
+                        <a class="nav-link" href="/animals/<%= zoo._id%>/new">Állatok hozzáadása</a>
                     </button>
                 </div>
             </div>
@@ -22,34 +22,29 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td scope="col">
-                    <td>Zsiri</td>
-                    <td>3</td>
-                    <td>Zsiráf</td>
-                    <td>
-                        <button class="btn" type="button" title="Change" id="change">
-                            <a class="nav-link" href="/animal/1/edit/1">Módosítás</a>
-                        </button>
-                    </td>
-                    <td>
-                        <button class="btn" type="button" title="Delete" id="delete">Törlés</button>
-                    </td>
-                  </tr>
+                 <% animals.forEach(function(Animal){ %>
                   <tr>
                     <th scope="row">
-                    <td>Brumi</td>
-                    <td>5</td>
-                    <td>Medve</td>
+                    <td>
+                      <%= Animal.allatnev %>
+                    </td>
+                    <td>
+                      <%= Animal.kor %>
+                    </td>
+                    <td>
+                      <%= Animal.fajta %>
+                    </td>
                     <td>
                         <button class="btn" type="button" title="Change" id="change">
-                            <a class="nav-link" href="/animal/1/edit/2">Módosítás</a>
+                            <a class="nav-link" href="/animal/<%= zoo._id %>/edit/<%= Animal._id%>">Módosítás</a>
                         </button>
                     </td>
                     <td>
-                        <button class="btn" type="button" title="Delete" id="delete">Törlés</button>
+                        <a class="nav-link" href="/animal/<%= zoo._id %>/delete/<%= Animal._id%>" type="button" title="Delete" id="delete">Törlés</a>
                     </td>
                   </tr>
+
+                 <%});%>
                   
                 </tbody>
               </table>

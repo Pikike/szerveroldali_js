@@ -3,19 +3,19 @@
  *  majd lementi a res.locals.animals-ba és next-et hív
  */
 
-//const requireOption = require('../requireOption');
+
 
  function getAnimal(objectrepository) {
     const AnimalModel=objectrepository.AnimalModel;
 
     return (req, res, next)=> {
-        res.locals.animalId=req.params.id;
-
+       
+        
         return AnimalModel.findOne({
-            _id: req.params.id
+            _id: req.params.animalid
         }).then ((animal)=>{
             res.locals.animal=animal;
-            return next;
+            return next();
         }).catch(err=> {
             return next(err);
         });

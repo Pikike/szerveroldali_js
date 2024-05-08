@@ -4,7 +4,7 @@
  *  
  */
 
-//const requireOption = require('../requireOption');
+
     
  function saveZoo(objectrepository) {
     const ZooModel=objectrepository.ZooModel;
@@ -15,11 +15,11 @@
         typeof req.body.uzemelteto==='undefined'){
             return next();
         }
-        
         const newZoo=res.locals.zoo ? res.locals.zoo : new ZooModel();
         newZoo.nev=req.body.nev;
         newZoo.cim=req.body.cim;
         newZoo.uzemelteto=req.body.uzemelteto;
+       
         return newZoo.save().then(()=>{
             return res.redirect('/');
         } ).catch((err)=>{

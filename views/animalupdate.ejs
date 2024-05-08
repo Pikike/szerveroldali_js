@@ -9,20 +9,26 @@
         <form method="POST">
             <div class="container">
                 <div class="form-group row my-3">
-                    <label for="inputName" class="col-sm-2 col-form-label">Név:</label>
+                    <label for="allatnev" class="col-sm-2 col-form-label">Név:</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="inputName" placeholder="Ella">
+                        <input type="text" class="form-control" id="allatnev" name="allatnev" value="<%= animal.allatnev %>">
                     </div>
                 </div>
                 <div class="form-group row my-3">
-                    <label for="inputAge" class="col-sm-2 col-form-label">Kor:</label>
+                    <label for="kor" class="col-sm-2 col-form-label">Kor:</label>
                     <div class="col-sm-10">
-                        <input type="number" class="form-control" id="inputAge" placeholder="10">
+                        <input type="number" class="form-control" id="kor" name="kor" value="<%= animal.kor %>">
+                    </div>
+                </div>
+                <div class="form-group row my-3">
+                    <label for="fajta" class="col-sm-2 col-form-label">Fajta:</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="fajta" name="fajta" readonly value="<%= animal.fajta%>">
                     </div>
                 </div>
                 <button type="submit" class="btn btn-primary">Mentés</button>
                 <button type="cancel" class="btn btn-secondary">
-                    <a class="nav-link" href="/animal/1">Mégsem</a>
+                    <a class="nav-link" href="/animal/<%= zoo._id%>">Mégsem</a>
                 </button>
             </div>
         </form>
