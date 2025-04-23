@@ -1,0 +1,35 @@
+<%- include('header') -%>
+        <header>
+            <div class="container">
+                <div class="row my-5 row-cols-md-6 align-self-end">
+                    <h1 class="col col-md-6">Állat adatainak módosítása</h1>
+                </div>
+            </div>
+        </header>
+        <form method="POST">
+            <div class="container">
+                <div class="form-group row my-3">
+                    <label for="allatnev" class="col-sm-2 col-form-label">Név:</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="allatnev" name="allatnev" value="<%= animal.allatnev %>">
+                    </div>
+                </div>
+                <div class="form-group row my-3">
+                    <label for="kor" class="col-sm-2 col-form-label">Kor:</label>
+                    <div class="col-sm-10">
+                        <input type="number" class="form-control" id="kor" name="kor" value="<%= animal.kor %>">
+                    </div>
+                </div>
+                <div class="form-group row my-3">
+                    <label for="fajta" class="col-sm-2 col-form-label">Fajta:</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="fajta" name="fajta" readonly value="<%= animal.fajta%>">
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Mentés</button>
+                <button type="cancel" class="btn btn-secondary">
+                    <a class="nav-link" href="/animal/<%= zoo._id%>">Mégsem</a>
+                </button>
+            </div>
+        </form>
+        <%- include('footer') -%>

@@ -1,0 +1,36 @@
+<%- include('header') -%>
+    <body>
+        <header>
+            <div class="container">
+                <div class="row my-5 row-cols-md-6 align-self-end">
+                    <h1 class="col col-md-6">Állatkert módosítása</h1>
+                </div>
+            </div>
+        </header>
+        <form method="POST">
+            <div class="container">
+                <div class="form-group row my-3">
+                    <label for="nev" class="col-sm-2 col-form-label">Név:</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="nev" name="nev" placeholder="Nev" value="<%= zoo.nev %>">
+                    </div>
+                </div>
+                <div class="form-group row my-3">
+                    <label for="cim" class="col-sm-2 col-form-label">Cím:</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="cim" name="cim" placeholder="cim" value="<%= zoo.cim %>">
+                    </div>
+                </div>
+                <div class="form-group row my-3">
+                    <label for="uzemelteto" class="col-sm-2 col-form-label">Üzemeltető:</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="uzemelteto" name="uzemelteto" placeholder="uzemelteto" value="<%= zoo.uzemelteto %>">
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Mentés</button>
+                <button type="cancel" class="btn btn-secondary">
+                    <a class="nav-link" href="/">Mégsem</a>
+                </button>
+            </div>
+        </form>
+        <%- include('footer') -%>

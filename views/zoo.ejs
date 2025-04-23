@@ -1,0 +1,54 @@
+<%- include('header') -%>
+        <header>
+            <div class="container">
+                <div class="row my-5 row-cols-md-6 align-self-end">
+                    <h1 class="col col-md-6">Állatkertek</h1>
+                    <button class="btn col col-md-2 align-self-end" >
+                        <a class="nav-link" href="/zoos/new">Állatkert hozzáadása</a>
+                    </button>
+                </div>
+            </div>
+        </header>
+        <div class="container">
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">
+                    <th scope="col">Név</th>
+                    <th scope="col">Cím</th>
+                    <th scope="col">Üzemeltető</th>
+                    <th scope="col">
+                    <th scope="col">
+                  </tr>
+                </thead>
+               <% zoos.forEach(function(Zoo){%>
+                <tr>
+                    <th scope="row">
+                        
+                            <a class="nav-link" href="/animal/<%= Zoo._id %>">Állatok</a>
+                        
+                    </th>
+                    <td>
+                        <%= Zoo.nev %>
+                    </td>
+                    <td>
+                        <%= Zoo.cim %>
+                    </td>
+                    <td>
+                        <%= Zoo.uzemelteto %>
+                    </td>
+                    <td>
+                        <button class="btn"  title="Change" id="change" >
+                            <a class="nav-link" href="/zoo/edit/<%= Zoo._id %>">Módosítás</a>
+                        </button>
+                    </td>
+                    <td>
+                        <a class="nav-link" type="button" href="/zoo/delete/<%= Zoo._id %>" title="Delete" id="delete">Törlés</button>
+                    </td>
+                  </tr>
+
+                <%}); %>
+
+              </table>
+        </div>
+        <%- include('footer') -%>

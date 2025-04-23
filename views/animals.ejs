@@ -1,0 +1,55 @@
+<%- include('header') -%>
+        <header>
+            <div class="container">
+                <div class="row my-5 row-cols-md-6 align-self-end">
+                    <h1 class="col col-md-6">Állatok</h1>
+                    <button class="btn col col-md-2 align-self-end" >
+                        <a class="nav-link" href="/animals/<%= zoo._id%>/new">Állatok hozzáadása</a>
+                    </button>
+                </div>
+            </div>
+        </header>
+        <div class="container">
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">
+                    <th scope="col">Név</th>
+                    <th scope="col">Kor</th>
+                    <th scope="col">Fajta</th>
+                    <th scope="col">
+                    <th scope="col">
+                  </tr>
+                </thead>
+                <tbody>
+                 <% animals.forEach(function(Animal){ %>
+                  <tr>
+                    <th scope="row">
+                    <td>
+                      <%= Animal.allatnev %>
+                    </td>
+                    <td>
+                      <%= Animal.kor %>
+                    </td>
+                    <td>
+                      <%= Animal.fajta %>
+                    </td>
+                    <td>
+                        <button class="btn" type="button" title="Change" id="change">
+                            <a class="nav-link" href="/animal/<%= zoo._id %>/edit/<%= Animal._id%>">Módosítás</a>
+                        </button>
+                    </td>
+                    <td>
+                        <a class="nav-link" href="/animal/<%= zoo._id %>/delete/<%= Animal._id%>" type="button" title="Delete" id="delete">Törlés</a>
+                    </td>
+                  </tr>
+
+                 <%});%>
+                  
+                </tbody>
+              </table>
+              <button type="button" class="btn btn-secondary">
+                <a class="nav-link" href="/">Vissza az álltkertekhez</a>
+              </button>
+        </div>        
+        <%- include('footer') -%>
